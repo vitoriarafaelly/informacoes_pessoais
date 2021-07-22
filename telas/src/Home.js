@@ -1,6 +1,8 @@
 import React from 'react';
-import { makeStyles, AppBar, Toolbar, IconButton, Button} from '@material-ui/core';
+import { makeStyles, AppBar, Toolbar, IconButton, Button, Typography} from '@material-ui/core';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
+import Box from '@material-ui/core/Box';
+
 
 const useStyles= makeStyles((theme) => ({
     root:{
@@ -28,6 +30,9 @@ const useStyles= makeStyles((theme) => ({
     textCancel:{
         paddingRight: '1px',
     },
+    backgroundBox:{
+        backgroundColor:'#F8F8FF',
+    }
   
   }));
 
@@ -36,6 +41,7 @@ function Home() {
     return(
         <div className={classes.root}>
             <AppBar >
+
             <Toolbar>
                 <img src="/images/logo_empresa.png"/>
                 <div className={classes.grow}/>
@@ -51,7 +57,20 @@ function Home() {
             </Toolbar>
             </AppBar>
 
+            <Box p={8} className={classes.backgroundBox}>
+                <Toolbar>
+                    <Typography variant='h5' color='textPrimary'
+                     style={{fontWeight:600}}
+                      className={classes.icons}>
+                        Nome social
+                    </Typography>
+                </Toolbar>
+
+            </Box>
+
         </div>
+
+        
     );
 
 }
