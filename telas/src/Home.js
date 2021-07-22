@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, AppBar, Toolbar, IconButton, Button, Typography} from '@material-ui/core';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import Box from '@material-ui/core/Box';
+import TextField from '@material-ui/core/TextField';
 
 
 const useStyles= makeStyles((theme) => ({
@@ -31,9 +32,8 @@ const useStyles= makeStyles((theme) => ({
         paddingRight: '1px',
     },
     backgroundBox:{
-        backgroundColor:'#F8F8FF',
+        backgroundColor:'#EEEEE0',
     }
-  
   }));
 
 function Home() {
@@ -57,13 +57,36 @@ function Home() {
             </Toolbar>
             </AppBar>
 
-            <Box p={8} className={classes.backgroundBox}>
+            <Box p={7} className={classes.backgroundBox}>
                 <Toolbar>
                     <Typography variant='h5' color='textPrimary'
                      style={{fontWeight:600}}
                       className={classes.icons}>
                         Nome social
                     </Typography>
+                </Toolbar>
+                <Toolbar>
+                    <Typography variant='h6' color='textPrimary'
+                     style={{fontWeight:600}}
+                      className={classes.icons}>
+                        xxxxxxxxxxxx
+                    </Typography>
+                </Toolbar>
+
+            </Box>
+            <Box p={13}>
+                <Toolbar>
+                    <Typography variant='body2'>
+                        Teste
+                    </Typography>
+                    <TextField
+                        helperText="Como gostaria que a gente lhe chame"
+                        id="outlined-password-input"
+                        label="Seu nome"
+                        type="password"
+                        autoComplete="current-password"
+                        variant="outlined"
+                        />
                 </Toolbar>
 
             </Box>
