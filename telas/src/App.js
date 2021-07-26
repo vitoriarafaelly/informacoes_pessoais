@@ -1,6 +1,7 @@
 import React from 'react';
 import {ThemeProvider, createMuiTheme } from '@material-ui/core';
 import Home from './Home'
+import Routes from './Routes';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home></Home>
+      <Routes></Routes>
     </ThemeProvider>
 
   );
