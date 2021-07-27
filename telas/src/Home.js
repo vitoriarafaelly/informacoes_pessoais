@@ -3,6 +3,8 @@ import { makeStyles, AppBar, Toolbar, IconButton, Button, Typography} from '@mat
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 
 const useStyles= makeStyles((theme) => ({
@@ -14,6 +16,9 @@ const useStyles= makeStyles((theme) => ({
     },
     grow:{
         flexGrow: 1
+    },
+    grow2:{
+        flexGrow: 20
     },
     btcancelar:{
         color: theme.palette.primary.main,
@@ -27,6 +32,17 @@ const useStyles= makeStyles((theme) => ({
     },
     icons:{
         color:theme.palette.primary.main,   
+    },
+    buttonProximo:{
+        backgroundColor:theme.palette.primary.main,
+        color: theme.palette.secondary.main,
+        borderRadius: '4px',
+        height: '5vh',
+    },
+    buttonVoltar:{
+        backgroundColor:theme.palette.secondary.main,
+        borderRadius: '4px',
+        height: '5vh',
     },
     textCancel:{
         paddingRight: '1px',
@@ -74,23 +90,44 @@ function Home() {
                 </Toolbar>
 
             </Box>
-            <Box p={13}>
+            <Box mx="auto" p={5}>
+                <Typography variant='caption' >
+                    Como você gostaria que a gente lhe chame
+                </Typography>
                 <Toolbar>
-                    <Typography variant='body2'>
-                        Teste
-                    </Typography>
+
                     <TextField
-                        helperText="Como gostaria que a gente lhe chame"
-                        id="outlined-password-input"
-                        label="Seu nome"
-                        type="password"
-                        autoComplete="current-password"
+                        id="outlined-name"
                         variant="outlined"
+                        placeholder="Seu nome"
+                        style={{ margin: 8 }}
+                        fullWidth
+
                         />
                 </Toolbar>
-
+                
+                <div className={classes.grow2}/>
+                
+                <Box pt={20}>
+                    <div >
+                        <button className={classes.buttonVoltar}>
+                        <IconButton>
+                                <ArrowBackIosIcon fontSize="small"></ArrowBackIosIcon>
+                            </IconButton>
+                            
+                            Voltar
+                        </button>
+                        
+                        <button className={classes.buttonProximo}>
+                            Próximo
+                            <IconButton>
+                                <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
+                            </IconButton>
+                            
+                        </button>
+                    </div>
+                </Box>
             </Box>
-
         </div>
 
         
