@@ -14,6 +14,18 @@ const useStyles= makeStyles((theme) => ({
       backgroundColor: theme.palette.secondary.main,
       boxShadow: 'none',
     },
+    button: {
+        margin: theme.spacing(1),
+        textTransform: 'none',
+        backgroundColor:theme.palette.primary.main,
+        color: theme.palette.secondary.main,
+      },
+      buttonVoltar: {
+        margin: theme.spacing(1),
+        textTransform: 'none',
+        backgroundColor:theme.palette.secondary.main,
+
+      },
     grow:{
         flexGrow: 1
     },
@@ -33,17 +45,7 @@ const useStyles= makeStyles((theme) => ({
     icons:{
         color:theme.palette.primary.main,   
     },
-    buttonProximo:{
-        backgroundColor:theme.palette.primary.main,
-        color: theme.palette.secondary.main,
-        borderRadius: '4px',
-        height: '5vh',
-    },
-    buttonVoltar:{
-        backgroundColor:theme.palette.secondary.main,
-        borderRadius: '4px',
-        height: '5vh',
-    },
+    
     textCancel:{
         paddingRight: '1px',
     },
@@ -62,7 +64,7 @@ function Home() {
                 <img src="/images/logo_empresa.png"/>
                 <div className={classes.grow}/>
                 <Button className={classes.btcancelar} variant="contained" >
-                    <IconButton size="medium">
+                    <IconButton size="small">
                         <CloseRoundedIcon className={classes.icons}/>
                     </IconButton>
                     <div className={classes.textCancel}>
@@ -91,8 +93,11 @@ function Home() {
 
             </Box>
             <Box mx="auto" p={5}>
-                <Typography variant='caption' >
-                    Como você gostaria que a gente lhe chame
+                <Typography variant='caption'>
+                    <Box textAlign={'justify'} m={2}>
+                        Como você gostaria que a gente lhe chame
+
+                    </Box>
                 </Typography>
                 <Toolbar>
 
@@ -108,24 +113,23 @@ function Home() {
                 
                 <div className={classes.grow2}/>
                 
-                <Box pt={20}>
-                    <div >
-                        <button className={classes.buttonVoltar}>
-                        <IconButton>
-                                <ArrowBackIosIcon fontSize="small"></ArrowBackIosIcon>
-                            </IconButton>
-                            
-                            Voltar
-                        </button>
-                        
-                        <button className={classes.buttonProximo}>
+                <Box pt={15}>
+                <Toolbar>
+                
+                    <div className={classes.grow}/>
+                    <Button variant="contained"
+                    className={classes.buttonVoltar}
+                    startIcon={<ArrowBackIosIcon />} >
+                        Voltar     
+                    </Button>
+                    <Button variant="contained"
+                    className={classes.button}
+                    endIcon={<ArrowForwardIosIcon />}
+                    >
                             Próximo
-                            <IconButton>
-                                <ArrowForwardIosIcon fontSize="small"></ArrowForwardIosIcon>
-                            </IconButton>
-                            
-                        </button>
-                    </div>
+                    </Button>
+                </Toolbar>
+                    
                 </Box>
             </Box>
         </div>
